@@ -1,0 +1,940 @@
+body {
+  text-align: center;
+  margin: 0;
+}
+
+/* label CSS is known as "Clipping CSS Snippet": https://www.nomensa.com/blog/2017/how-improve-web-accessibility-hiding-elements */
+label {
+  border: 0;
+  clip: rect(1px 1px 1px 1px);
+  clip: rect(1px, 1px, 1px, 1px);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
+}
+
+/* ================== Main Page ================== */
+#main-div {
+  margin-top: 100px;
+  display: grid;
+  grid-template-columns: 70% 30%;
+  grid-template-areas:"main side";
+}
+
+#recipe-list {
+grid-area: main;
+box-sizing: border-box;
+height: 75vh;
+overflow-y: auto;
+overflow-x: hidden;
+width: 100%;
+padding: 5px 15px 5px 15px;
+position: relative;
+}
+
+.recipes {
+display: grid;
+grid-template-columns: 40% 55%;
+margin-top: 15px;
+}
+
+#recipe-list h1 {
+font-family:'Arvo', Arial;
+font-weight:700;
+text-align: center;
+color: #AE6968;
+}
+
+.recipes button {
+font-size: 1em;
+font-weight: bold;
+background: #D4EBEB;
+border: 2px solid #69AEAE;
+color: #AE6968;
+border-radius: 10px;
+transition: background-color 250ms linear;
+}
+
+.recipes button:hover {
+background: #AE6968;
+color: whitesmoke;
+}
+
+.recipe-image-container {
+text-align: center;
+padding: 10px
+}
+
+#user-image {
+margin: 0 auto;
+padding: 5px;
+}
+
+#user-image p {
+margin: 0px auto;
+padding-bottom: 12px;
+}
+
+#user-image h3 {
+margin: 0px auto;
+}
+
+.recipes img {
+max-width: 90%;
+border-radius: 60px;
+box-shadow: 4px 4px;
+}
+
+.main-side {
+grid-area: side;
+border-left: 3px solid #D4EBEB;
+box-sizing: border-box;
+height: 75vh;
+overflow: auto;
+width: 100%;
+position: relative;
+}
+
+.main-side img {
+  width: 85px;
+  height: 85px;
+  border: 2px solid #AE6968;
+  border-radius: 50%;
+  grid-area: main;
+  cursor: pointer;
+}
+
+.main-side-top {
+text-align: center;
+}
+
+.main-side-top h1{
+font-family:'Arvo', Arial;
+font-weight:700;
+letter-spacing:1px;
+}
+
+.main-side-top button {
+font-family:'Literata', Arial;
+font-weight: 600;
+margin: 8px 5px;
+font-size: .8em;
+width: 50%;
+height: 25px;
+background: #be8786;
+border: 2px solid #AE6968;
+border-radius: 10px;
+transition: background-color 250ms linear;
+color: white;
+box-shadow: 2px 2px 2px lightgray;
+cursor: pointer;
+}
+
+.main-side-top button:hover {
+background: #69AEAE;
+color: whitesmoke;
+box-shadow: 2px 2px 2px #D4EBEB;
+}
+
+.sticky {
+position: -webkit-sticky;
+position: sticky;
+top: -1px;
+background-color: white;
+height: 50px;
+z-index: 50;
+display: grid;
+grid-template-columns: 1fr 1fr;
+}
+
+.sticky-anchor {
+  text-decoration: none;
+  margin-top: auto;
+  margin-bottom: auto;
+}
+
+.sticky-anchor h1 {
+  margin: auto auto;
+  font-size: 25px;
+  color: #AE6968;
+  cursor: pointer;
+  background-image: linear-gradient(#AE6968, #AE6968);
+  background-size: 0 2px, auto;
+  background-repeat: no-repeat;
+  background-position: center bottom;
+  transition: all .2s ease-out;
+  width: 75%;
+}
+
+.sticky-anchor h1:hover {
+  color: #69AEAE;
+  background-size: 100% 2px, auto;
+}
+
+.sticky button {
+  height: 25px;
+  margin-top: 13px;
+}
+
+.black {
+background-color: #AE6968;
+color: white;
+margin: 0;
+padding: 20px;
+z-index: 50;
+}
+
+.main-side-top-buttons h3 {
+font-size: 17px;
+margin: 0;
+color: #AE6968;
+grid-area: rep;
+}
+
+.main-side-buttons {
+  grid-area: buttons;
+}
+
+.main-side-top-buttons {
+  margin-top: 15px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-areas:
+  'main buttons'
+  'rep buttons';
+}
+
+.main-recipe-recipes h2{
+font-family:'Arvo', Arial;
+}
+
+.main-user-recipes {
+display: grid;
+grid-template-columns: repeat(2, 1fr);
+background-color: #AE6968;
+color: #D4EBEB;
+}
+
+.main-user-recipes img {
+justify-self: center;
+margin: 10px 0;
+}
+
+.main-user-recipe-heading {
+align-self: center;
+}
+
+.full-recipe-div {
+text-align: center;
+}
+
+.full-recipe-div img {
+width: 50%;
+}
+
+.user-recipes {
+display: grid;
+grid-template-columns: 40% 50%;
+margin-top: 115px;
+}
+
+.user-recipe-image-container {
+text-align: center;
+padding: 10px;
+}
+
+.user-recipe-image-container img {
+max-width: 90%;
+border-radius: 60px;
+box-shadow: 4px 4px;
+}
+
+.user-recipe-content-container h2 {
+font-family: 'Literata', monospace;
+font-weight: 600;
+font-style: italic;
+}
+
+.user-recipe-content-container p {
+font-family: 'Literata', monospace;
+font-size: 1em;
+}
+
+.user-recipe-content-container button {
+font-size: 1em;
+font-weight: 600;
+background: whitesmoke;
+border: 2px solid black;
+border-radius: 10px;
+transition: background-color 250ms linear;
+font-family: 'Literata', Arial;
+}
+
+.user-recipe-content-container button:hover {
+background: black;
+color: whitesmoke;
+}
+
+/* =============== Header ================= */
+
+header {
+  font-size: 2em;
+  height: 100px;
+  border-bottom: 1.2px solid #D4EBEB;
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background-color: white;
+  z-index: 100;
+}
+
+header img {
+  width: 45%;
+  margin-top: auto;
+  margin-bottom: auto;
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 38%;
+}
+
+.login-image {
+  width: 35%;
+  cursor: pointer;
+  border-radius: 0;
+}
+
+header a {
+  text-decoration: none;
+}
+
+header p {
+  margin-left: auto;
+  margin-right: auto;
+  background-image: linear-gradient(#AE6968, #AE6968);
+  background-size: 0 2px, auto;
+  background-repeat: no-repeat;
+  background-position: center bottom;
+  transition: all .2s ease-out;
+  color: #69AEAE;
+  width: 70%;
+  cursor: pointer;
+}
+
+header p:hover {
+  color: #AE6968;
+  background-size: 100% 2px, auto;
+}
+
+/* ================ Show Page ================== */
+
+.full-recipe-img img {
+  width: 50%;
+  border-radius: 20px;
+}
+
+.full-recipe-page {
+  color: #AE6968;
+}
+
+.full-recipe-page a {
+  text-decoration: none;
+  color: #AE6968;
+  background-image: linear-gradient(#AE6968, #AE6968);
+  background-size: 0 2px, auto;
+  background-repeat: no-repeat;
+  background-position: center bottom;
+  transition: all .2s ease-out;
+}
+
+.full-recipe-page a:-webkit-any-link {
+  cursor: pointer;
+}
+
+.full-recipe-page a:hover {
+  color: #69AEAE;
+  background-size: 100% 2px, auto;
+}
+
+.full-recipe-content {
+  width: 50%;
+  margin: 0 auto;
+  box-shadow: 0 3px 20px 0px rgba(0, 0, 0, 0.5);
+  padding: 30px;
+  border-radius: 20px;
+}
+
+.full-recipe-page {
+  margin-top: 115px;
+}
+
+.full-recipe-button-reach {
+  margin-bottom: 30px;
+  font-size: .8em;
+  font-weight: bold;
+  background: #be8786;
+  border: 2px solid #AE6968;
+  color: white;
+  border-radius: 10px;
+  transition: background-color 250ms linear;
+  box-shadow: 2px 2px 2px lightgray;
+  cursor: pointer;
+  margin-top: 20px;
+}
+
+.full-recipe-button-reach:hover {
+  background: #69AEAE;
+  color: whitesmoke;
+  box-shadow: 2px 2px 2px #D4EBEB;
+}
+
+/* ================ Footer ================ */
+
+.footer {
+  width: 100%;
+  height: 65px;
+  background-color: #69AEAE;
+  color: whitesmoke;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.footer img {
+  width: 50px;
+  cursor: pointer;
+}
+
+#github {
+  height:2.7em;
+  width:1.2em;
+  background-color:white;
+  align-self:auto;
+  padding:.3em 2em .2em 0;
+  margin-right:1em;
+  border-radius:30px;
+}
+
+
+/* ================ Cards ================ */
+.top-container {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  outline: none;
+}
+
+.main-container-sub {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  grid-gap: 15px;
+  margin: 0 auto;
+}
+
+.container .card {
+  position: relative;
+  width: 200px;
+  height: 300px;
+  margin: 0 auto;
+  background: #fff;
+  transition: 0.5s;
+}
+
+.container .card:hover {
+  box-shadow: 0 30px 50px rgba(0, 0, 0, 0.2)
+}
+
+.container .card .face {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.container .card .face.face1 {
+  box-sizing: border-box;
+  padding: 20px;
+  text-align: center;
+  background: #fff;
+  color: #AE6968;
+  display: grid;
+  border-radius: 20px;
+}
+
+a:-webkit-any-link {
+  cursor: auto;
+}
+
+.card {
+  border-radius: 20px;
+}
+
+.content {
+  margin-top: 80px;
+}
+
+.container .card .face.face1 h2 {
+  margin-top: 0;
+  margin-bottom: 15px;
+  font-size: 1.3em;
+  margin-block-end: 0.2em;
+}
+
+.container .card .face.face1 p {
+  margin-block-start: 0.2em;
+}
+
+.container .card .face.face2 {
+  transition: 0.5s;
+  background-position: center !important;
+  background-repeat: no-repeat !important;
+  background-size: cover !important;
+  border-radius: 20px;
+}
+
+.container .card:hover .face.face2 {
+  height: 80px;
+  width: 80px;
+  border-radius: 50% !important;
+  top: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: white;
+  border: 2px solid #AE6968;
+}
+
+.container .card .face.face2 h2 {
+  margin: 0;
+  padding: 0;
+  font-size: 2em;
+  color: #fff;
+  transition: 0.5s;
+}
+
+.container .card:hover .face.face2 h2 {
+  display: none;
+}
+
+.main-page-button {
+  font-size: .8em;
+  font-weight: bold;
+  background: #be8786;
+  border: 2px solid #AE6968;
+  color: white;
+  border-radius: 10px;
+  transition: background-color 250ms linear;
+  box-shadow: 2px 2px 2px lightgray;
+  cursor: pointer;
+}
+
+.main-page-button:hover {
+  background: #69AEAE;
+  color: whitesmoke;
+  box-shadow: 2px 2px 2px #D4EBEB;
+}
+
+.main-container-card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  grid-gap: 15px;
+}
+
+.title-outline {
+  color: black;
+  -webkit-text-fill-color: white; /* Will override color (regardless of order) */
+  -webkit-text-stroke-width: 1.2px;
+  -webkit-text-stroke-color: #AE6968;
+}
+
+/* ================ Cards - Side ================ */
+.main-container-segment {
+  background-color: #AE6968;
+  margin-top: 8px;
+  margin-bottom: 8px;
+}
+
+.side-segment-grid {
+  display: grid;
+  grid-template-areas: 'side1 side2';
+  background: #AE6968;
+}
+
+.main-container-sub-segment {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.container-segment .card-segment {
+  position: relative;
+  width: 135px;
+  height: 185px;
+  margin: 0 auto;
+  background: #fff;
+  transition: 0.5s;
+}
+
+.container-segment .card-segment:hover {
+  box-shadow: 0 30px 50px rgba(0, 0, 0, 0.2)
+}
+
+.container-segment .card-segment .face-segment {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.container-segment .card-segment .face-segment.face1-segment {
+  box-sizing: border-box;
+  padding: 20px;
+  text-align: center;
+  background: #fff;
+  color: #AE6968;
+  display: grid;
+  border-radius: 20px;
+}
+
+.card-segment {
+  border-radius: 20px;
+}
+
+.content-segment {
+  margin-top: 60px;
+  width: 130px;
+}
+
+.container-segment .card-segment .face-segment.face1-segment h2 {
+  margin-top: 0;
+  margin-bottom: 15px;
+  font-size: 1.3em;
+  margin-block-end: 0.2em;
+}
+
+.container-segment .card-segment .face-segment.face1-segment p {
+  margin-block-start: 0.2em;
+}
+
+.container-segment .card-segment .face-segment.face2-segment {
+  transition: 0.5s;
+  background-position: center !important;
+  background-repeat: no-repeat !important;
+  background-size: cover !important;
+  border-radius: 20px;
+}
+
+.container-segment .card-segment:hover .face-segment.face2-segment {
+  height: 80px;
+  width: 80px;
+  border-radius: 50% !important;
+  top: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: white;
+  border: 2px solid #AE6968;
+}
+
+.container-segment .card-segment .face-segment.face2-segment h2 {
+  margin: 0;
+  padding: 0;
+  font-size: 1.6em;
+  color: #fff;
+  transition: 0.5s;
+}
+
+.container-segment .card-segment:hover .face-segment.face2-segment h2 {
+  display: none;
+}
+
+.sub-segment-card-heading h3 {
+  margin-bottom: 0;
+  font-size: 15px;
+}
+
+.sub-segment-card-heading h4 {
+  margin: 0;
+  font-size: 12px;
+}
+
+.main-page-button-segment-info {
+  font-size: 1em;
+  font-weight: bold;
+  background: #D4EBEB;
+  border: 2px solid #69AEAE;
+  color: #AE6968;
+  border-radius: 10px;
+  transition: background-color 250ms linear;
+  width: 45% !important;
+}
+
+.main-page-button-segment:hover {
+  background: #AE6968;
+  color: whitesmoke;
+}
+
+.main-container-card-grid-segment {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  grid-gap: 15px;
+}
+
+/* ======================= Forms ======================= */
+
+.login-form {
+  background: #AE6968;
+  height: 100vh;
+}
+
+.register-form {
+  background: #AE6968;
+  height: 100vh;
+}
+
+#create-recipe-form {
+  background: #AE6968;
+  height: 492px;
+  display: flex;
+}
+
+#update-user-form {
+  background: #AE6968;
+  height: 492px;
+  display: flex;
+}
+
+.update-user {
+  margin-top: 100px;
+}
+
+#edit-recipe-form {
+  background: #AE6968;
+  height: 492px;
+  display: flex;
+}
+
+.edit-form {
+  margin-top: 100px;
+}
+
+/* ================ Sign In / Register ================ */
+
+.login-logo-image {
+  width: 14%;
+  margin-top: 10px;
+  border-radius: 45%;
+}
+
+.login-logo-image-two {
+  width: 14%;
+  margin-top: 10px;
+  border-radius: 45%;
+  cursor: pointer;
+}
+
+.sign-in-main {
+  width: 30%;
+  height: 450px;
+  margin: 15px auto;
+  background: white;
+  box-shadow: 0 3px 20px 0px rgba(0, 0, 0, 0.5);
+  border-radius: 20px;
+}
+
+.sign-in-header {
+  background: #69AEAE;
+  color: #AE6968;
+  height: 75px;
+  border-radius: 20px 20px 0 0
+}
+
+.sign-in-grid {
+  display: grid;
+  height: 375px;
+}
+
+.sign-in-header h2 {
+  margin: 0;
+  padding: 25px;
+}
+
+.sign-in-input-div {
+  align-self: end;
+}
+
+.sign-in-input {
+  font-size: 14px;
+  position: relative;
+  width: 65%;
+  height: 45px;
+  background: #ebebeb;
+  color: #AE6968;
+  border-radius: 27px;
+  padding: 0 35px 0 35px;
+  border-style: none;
+  outline: none;
+  transition: width 1s;
+}
+
+.sign-in-input::placeholder {
+  color: #AE6968;
+}
+
+.sign-in-input:focus {
+  width: 70%;
+}
+
+#submit {
+  align-items: center;
+  padding: 0 20px;
+  width: 85%;
+  height: 45px;
+  background-color: #69AEAE;
+  border-radius: 25px;
+  font-size: 15px;
+  color: #AE6968;
+  margin-top: 15px;
+  font-weight: bolder;
+  outline: none;
+  cursor: pointer;
+  transition: background-color 0.5s, color 0.5s;
+}
+
+#submit:hover {
+  background-color: #AE6968;
+  color: #69AEAE;
+}
+
+#register {
+  align-items: center;
+  padding: 0 20px;
+  width: 85%;
+  height: 45px;
+  background-color: #69AEAE;
+  border-radius: 25px;
+  font-size: 15px;
+  color: #AE6968;
+  margin-top: 15px;
+  font-weight: bolder;
+  outline: none;
+  cursor: pointer;
+  transition: background-color 0.5s, color 0.5s;
+}
+
+#register:hover {
+  background-color: #AE6968;
+  color: #69AEAE;
+}
+
+#create-recipe-button {
+  align-items: center;
+  padding: 0 20px;
+  width: 85%;
+  height: 45px;
+  background-color: #69AEAE;
+  border-radius: 25px;
+  font-size: 15px;
+  color: #AE6968;
+  margin-top: 15px;
+  font-weight: bolder;
+  outline: none;
+  cursor: pointer;
+  transition: background-color 0.5s, color 0.5s;
+}
+
+#create-recipe-button:hover {
+  background-color: #AE6968;
+  color: #69AEAE;
+}
+
+#update-user-button {
+  align-items: center;
+  padding: 0 20px;
+  width: 85%;
+  height: 45px;
+  background-color: #69AEAE;
+  border-radius: 25px;
+  font-size: 15px;
+  color: #AE6968;
+  margin-top: 15px;
+  font-weight: bolder;
+  outline: none;
+  cursor: pointer;
+  transition: background-color 0.5s, color 0.5s;
+}
+
+#update-user-button:hover {
+  background-color: #AE6968;
+  color: #69AEAE;
+}
+
+#edit-recipe-button {
+  align-items: center;
+  padding: 0 20px;
+  width: 85%;
+  height: 45px;
+  background-color: #69AEAE;
+  border-radius: 25px;
+  font-size: 15px;
+  color: #AE6968;
+  margin-top: 15px;
+  font-weight: bolder;
+  outline: none;
+  cursor: pointer;
+  transition: background-color 0.5s, color 0.5s;
+}
+
+#edit-recipe-button:hover {
+  background-color: #AE6968;
+  color: #69AEAE;
+}
+
+.sign-in-lower-grid {
+  display: grid;
+  grid-template-rows: 1fr 1fr;
+}
+
+.sign-in-lower-grid p {
+  color: #999999;
+  align-self: end;
+  margin: 0;
+}
+
+#register-link {
+  width: 30%;
+  margin: 0 auto;
+  cursor: pointer;
+  color: #AE6968;
+}
+
+#register-link:hover {
+  color: #69AEAE;
+}
+
+.sign-in-lower-grid a {
+  text-decoration: none;
+  display: table;
+}
+
+/* ================ Other ================ */
+
+.create-recipe {
+  margin-top: 100px;
+}
