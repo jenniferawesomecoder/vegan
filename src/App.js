@@ -160,6 +160,7 @@ class App extends React.Component {
         <Route path="/edit/:id" render={(props) => (<EditRecipe id={props.match.params.id} handleChange={this.handleChange} handleEdit={this.handleEdit} currentUser={this.state.currentUser} />)} />
         <Route path="/update_profile/:id" render={(props) => (<UpdateUser id={props.match.params.id} currentUser={this.state.currentUser} handleEditUser={this.handleEditUser} />)} />
         <Route path="/gallery" render={(props) => (<Gallery />)} />
+        <Route path="/home" render={(props) => (<Gallery />)} />
         {
           this.state.currentUser ?
             <Footer /> : <></>

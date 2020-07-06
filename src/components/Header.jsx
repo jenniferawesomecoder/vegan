@@ -7,9 +7,9 @@ export default function Header(props) {
   return (
     <header>
       <img src={Veganite} alt="Veganite" />
-     
-      <Link to='/Home'>
-      <p>Home</p> 
+
+      <Link to='/home'>
+      <p>Home</p>
       </Link>
       <Link to='/recipes'>
         <p>Recipes</p>
