@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-import Veganite from '../assets/image.png'
+import Veganite from '../assets/logo.png'
 
 export default function Header(props) {
   return (
