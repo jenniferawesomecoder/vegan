@@ -27,9 +27,9 @@ export default class MainPageUser extends React.Component {
             <div id="user-image">
               {this.props.currentUser.image_url === null ? <Link to={`/update_profile/${this.props.currentUser.id}`}><img src='https://i.imgur.com/HZPz2tu.png' alt="default user profile" /></Link> : <Link to={`/update_profile/${this.props.currentUser.id}`}><img src={this.props.currentUser.image_url} alt="current user profile" /></Link>}
             </div>
-            <h3 className="main-side-heading">Representing {this.props.currentUser.location}</h3>
+            {/*<h3 className="main-side-heading">Representing {this.props.currentUser.location}</h3>*/}
             <div className="main-side-buttons">
-              
+
               <button onClick={this.props.handleLogout} className="small-button">Logout</button>
             </div>
           </div>

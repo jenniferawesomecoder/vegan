@@ -12,6 +12,7 @@ import CreateRecipe from './components/CreateRecipe';
 import EditRecipe from './components/EditRecipe';
 import UpdateUser from './components/UpdateUser';
 import Footer from './components/Footer';
+import Gallery from './components/Gallery';
 
 class App extends React.Component {
   constructor() {
@@ -158,7 +159,7 @@ class App extends React.Component {
         <Route path='/recipes/new' render={() => (<CreateRecipe currentUser={this.state.currentUser} createRecipe={this.createRecipe} />)} />
         <Route path="/edit/:id" render={(props) => (<EditRecipe id={props.match.params.id} handleChange={this.handleChange} handleEdit={this.handleEdit} currentUser={this.state.currentUser} />)} />
         <Route path="/update_profile/:id" render={(props) => (<UpdateUser id={props.match.params.id} currentUser={this.state.currentUser} handleEditUser={this.handleEditUser} />)} />
-
+        <Route path="/gallery" render={(props) => (<Gallery />)} />
         {
           this.state.currentUser ?
             <Footer /> : <></>

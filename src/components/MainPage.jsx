@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import MainPageUser from './MainPageUser';
 
 export default class MainPage extends React.Component {
- 
+
   render() {
     const mainDivOne = {
       gridTemplateColumns: '100%',
@@ -16,7 +16,7 @@ export default class MainPage extends React.Component {
     }
 
     return (
-      <div id="main-div" style={this.props.toggle ? mainDivTwo : mainDivOne}>
+      <div className="main-div" style={this.props.toggle ? mainDivTwo : mainDivOne}>
         <div id="recipe-list">
           <h1>Take a look at our most recent recipes!</h1>
           <div className="main-container-card-grid">
