@@ -7,7 +7,8 @@ export default class RegisterForm extends Component {
     email: '',
     password: '',
     location: '',
-    description: ''
+    description: '',
+    error: {}
   }
 
   canBeSubmitted = () => {
@@ -23,6 +24,13 @@ export default class RegisterForm extends Component {
     this.setState({
       [name]: value
     })
+    if (name === 'username' && value.length < 5) {
+      this.setState({ error: { [name]: 'minimum 5 characters' } })
+    } else if (name === 'password' && value.length < 5) {
+      this.setState({ error: { [name]: 'minimum 5 characters' } })
+    } else {
+      this.setState({ error: {} })
+    }
   }
 
   render() {
@@ -53,6 +61,7 @@ export default class RegisterForm extends Component {
                 onChange={this.handleChange}
                 required
               />
+              <p>{this.state.error.username}</p>
             </div>
             <div className="sign-in-input-div">
               <label htmlFor="email">Email</label>
@@ -79,6 +88,7 @@ export default class RegisterForm extends Component {
                 onChange={this.handleChange}
                 required
               />
+              <p>{this.state.error.password}</p>
             </div>
             <div className="sign-in-input-div">
               <label htmlFor="location">Location</label>

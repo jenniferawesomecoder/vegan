@@ -871,6 +871,12 @@ a:-webkit-any-link {
   color: #69AEAE;
 }
 
+#register:disabled {
+  background-color: #69AEAE;
+  color: #AE6968;
+  opacity: 0.5;
+}
+
 #create-recipe-button {
   align-items: center;
   padding: 0 20px;
