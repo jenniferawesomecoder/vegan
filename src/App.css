@@ -875,6 +875,7 @@ a:-webkit-any-link {
   background-color: #69AEAE;
   color: #AE6968;
   opacity: 0.5;
+  cursor: not-allowed;
 }
 
 #create-recipe-button {

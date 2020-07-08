@@ -36,6 +36,8 @@ class App extends React.Component {
       this.setState({ currentUser })
       this.props.history.push('/recipes')
     }
+
+    return currentUser;
   }
 
   handleRegister = async (registerData) => {
